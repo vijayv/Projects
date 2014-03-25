@@ -72,3 +72,32 @@ def counter2(word, lkup):
 
 # counter2("This is a super long sentence isn't it?","n")
 
+'''
+Exercise 8.7. There is a string method called count that is similar to the function in the previous
+exercise. Read the documentation of this method and write an invocation that counts the number of
+as in 'banana'.
+'''
+
+# print 'banana'.count('a')
+
+'''
+Exercise 8.8. Read the documentation of the string methods at http: // docs. python. org/ 2/
+library/ stdtypes. html# string-methods . You might want to experiment with some of them
+to make sure you understand how they work. strip and replace are particularly useful.
+
+The documentation uses a syntax that might be confusing. For example, in
+find(sub[, start[, end]]), the brackets indicate optional arguments. So sub is required, but
+start is optional, and if you include start, then end is optional.
+'''
+
+# print '  empty space   '
+# print '  empty space   '.strip()
+#
+# print 'empty space'.replace("s","c")
+
+'''
+Exercise 8.9. Starting with this diagram, execute the program on paper, changing the values of i
+and j during each iteration. Find and fix the second error in this function.
+
+Answer: The reason that it only runs 3 times is because of the "> 0", it should be changed to ">= 0"
+'''
