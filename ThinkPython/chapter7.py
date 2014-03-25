@@ -19,11 +19,12 @@ chooses a reasonable value of x, and returns an estimate of the square root of a
 def square_root(a):
     epsilon = .0000001
     x, y = 1, 0
+    x = a/2
     while abs(y-x) > epsilon:
-        x = a/2
+        x = y if y > 0 else 1
         y = (x + a/x) / 2
 
-    return x, "is the square root"
 
-# doesn't work!
-# print square_root(16)
+    return y
+
+print square_root(16)
