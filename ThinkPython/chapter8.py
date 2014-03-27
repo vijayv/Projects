@@ -1,3 +1,4 @@
+#!/usr/bin/python
 '''
 Exercise 8.1. Write a function that takes a string as an argument and displays the letters backward,
 one per line.
