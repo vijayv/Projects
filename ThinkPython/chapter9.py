@@ -45,37 +45,24 @@ def has_letter(word, letter):
     return True if letter in word else False
 
 def has_forbidden_letters(word_list):
-
     letter_list = []
-    while True:
+    u_in = ""
+    while u_in <> "done":
         u_in = raw_input("add forbidden letter: \n\r").lower()
-        if u_in == "done":
-            print "you have picked", letter_list
-            break
-        else:
-            letter_list.append(u_in)
+        letter_list.append(u_in)
+
+    allowed = 0
 
     for word in word_list:
         for letter in letter_list:
             if not has_letter(word, letter):
-                return False
-    return True
+                allowed += 1
 
-def list_used_letters(word_list):
-    import string
-    letter_list = string.lowercase
-    while True:
-        u_in = raw_input("add forbidden letter: \n\r").lower()
-        if u_in == "done":
-            print "you have picked", letter_list
-            break
-        else:
-            letter_list.append(u_in)
+    list_length = len(word_list)
+    print "Out of", list_length, ", ", allowed, "are allowed."
 
-    for word in word_list:
-        for letter in letter_list:
-            if not has_letter(word, letter):
-                return False
-    return True
 
-print has_forbidden_letters(word_list)
+# def count_of_acceptable_words(word_list):
+
+
+has_forbidden_letters(word_list)
