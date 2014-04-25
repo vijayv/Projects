@@ -37,10 +37,8 @@ def histogram(s):
 
 # print histogram('callous')
 
-
 '''
 Exercise 11.3. Dictionaries have a method called keys that returns the keys of the dictionary, in no particular order, as a list.
-
 Modify print_hist to print the keys and their values in alphabetical order.
 '''
 
@@ -51,5 +49,35 @@ def sorted_dict(l):
     for entry in list:
         print entry, l.get(entry)
 
-# sorted_dict(my_dict)s
+# sorted_dict(my_dict)
+
+'''
+Exercise 11.4. Modify reverse_search so that it builds and returns a list of all keys that map to v or an empty list if there are none.
+'''
+
+def reverse_lookup(d,v):
+    lkup = []
+    for k in d:
+        if d[k] == v:
+            lkup.append(k)
+    return lkup
+
+h = histogram("parrot")
+k = reverse_lookup(h,2)
+# print k
+
+'''
+Exercise 11.5. Read the documentation of the dictionary method setdefault and use it to write a
+more concise version of invert_dict.
+'''
+# INCOMPLETE
+def invert_dict(d):
+    inverse = dict()
+    for key in d:
+        val = d[key]
+        dict.setdefault(val, [key])
+        else:
+            inverse[val].append(key)
+    return inverse
+
 
