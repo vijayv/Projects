@@ -69,6 +69,8 @@ k = reverse_lookup(h,2)
 '''
 Exercise 11.5. Read the documentation of the dictionary method setdefault and use it to write a
 more concise version of invert_dict.
+
+see solution here: http://www.greenteapress.com/thinkpython/code/invert_dict.py
 '''
 # INCOMPLETE
 def invert_dict(d):
@@ -80,4 +82,26 @@ def invert_dict(d):
             inverse[val].append(key)
     return inverse
 
+'''
+Exercise 11.6. Run this version of and the original with a range of parameters and compare their run times.
+see solution here: http://www.greenteapress.com/thinkpython/code/ackermann_memo.py
+'''
 
+known = {0:0, 1:1}
+
+def fibonacci(n):
+    if n in known:
+        return known[n]
+
+    res = fibonacci(n - 1) + fibonacci(n - 2)
+    known[n] = res
+    return res
+
+'''
+Exercise 11.8. Exponentiation of large integers is the basis of common algorithms for public-key encryption.
+Read the Wikipedia page on the RSA algorithm (http://en.wikipedia.org/wiki/RSA_(algorithm)) and write functions to encode and decode messages.
+'''
+
+def decode_my_algo(n,e):
+    pass
+    # work in progress
