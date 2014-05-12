@@ -1,4 +1,8 @@
 #!/usr/bin/python
+import chapter11
+import string
+import random
+import bisect
 
 '''
 Exercise 13.1. Write a program that reads a file, breaks each line into words, strips whitespace and
@@ -41,19 +45,16 @@ def process_file(infilename):
 
         return wordlist
 
-
 book = {}
+
 def add_to_dict(word):
     global book
     book[word] = book.get(word,0) + 1
 
 mylist = process_file("grim_tales.txt")
 mylist.sort()
-
 for entry in mylist:
     add_to_dict(entry)
-
-# print len(book), "different words were used."
 
 '''
 Exercise 13.3. Modify the program from the previous exercise to print the 20 most frequently-used
@@ -67,9 +68,6 @@ def convert_to_sorted_list(indict):
         outlist.sort(reverse=True)
     return outlist
 
-sortedbookwordslist = convert_to_sorted_list(book)
-# print sortedbookwordslist
-
 '''
 Exercise 13.4. Modify the previous program to read a word list (see Section 9.1) and then print all
 the words in the book that are not in the word list. How many of them are typos? How many of
@@ -81,8 +79,6 @@ def compare_to_wordlist(infile):
         for word in words:
             if word not in book:
                 print word.strip()
-
-# compare_to_wordlist("words.txt")
 
 '''
 Exercise 13.5. Write a function named choose_from_hist that takes a histogram as defined in
@@ -99,7 +95,6 @@ def choose_from_hist(hist):
     val = random.choice(hist.keys())
     print val, "," ,hist[val], "/", sum(hist.values())
 
-# choose_from_hist(sample_hist)
 
 '''
 Exercise 13.6. Python provides a data structure called set that provides many common set operations.
@@ -129,21 +124,42 @@ Solution: http://www.greenteapress.com/thinkpython/code/analyze_book3.py
 .
 '''
 
-def build_list_of_words(x):
+def pick_random_word(x):
     '''
     returns a list of words
     '''
-    wordlist = x.keys()
-    return wordlist
+    total_freq = 0
+    freq = []
+    outlist = []
 
+    for item,frq in x.items():
+        total_freq += frq
+        freq.append(total_freq)
+        outlist.append(item)
+
+    x = random.randint(0,total_freq-1)
+    indx = bisect.bisect(freq,x)
+    return outlist[indx]
 
 if __name__ == '__main__':
+
+    sortedbookwordslist = convert_to_sorted_list(book)
+    print sortedbookwordslist
+
+    print len(book), "different words were used."
+    compare_to_wordlist("words.txt")
+
+    choose_from_hist(sample_hist)
+
     hist = process_file('emma.txt')
     words = process_file('words.txt')
 
     diff = missing_from_words(hist, words)
     print "The words in the book that aren't in the word list are:"
-    # for word in diff:
-        # print word,
+    for word in diff:
+        print word,
 
-    print build_list_of_words(book)
+    myhist = chapter11.histogram(book)
+    print "random word:", pick_random_word(myhist)
+
+

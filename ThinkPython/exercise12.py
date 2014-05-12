@@ -95,7 +95,7 @@ for k in anagram_dict:
 
 for each in only_anagrams:
     for idx in range(0,len(each)):
-        if len(each[idx]) == len(each[idx-1])
+        if len(each[idx]) == len(each[idx-1]):
             for idxl in range(0,len(each[idx])):
                 repeats = 0
                 if repeats > 1:
