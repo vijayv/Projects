@@ -16,8 +16,6 @@ def sumall(*args):
         total += each
     return total
 
-# print sumall(1,3,4,5)
-
 '''
 Exercise 12.2. In this example, ties are broken by comparing words, so words with the same length
 appear in reverse alphabetical order. For other applications you might want to break ties at random.
@@ -38,4 +36,7 @@ def sort_by_length(words):
         res.append(word)
     return res
 
-# print sort_by_length(['this','that','whom','qualification','quartile','quandary','i','re'])
+if __name__ == '__main__':
+    print sumall(1,3,4,5)
+
+    print sort_by_length(['this','that','whom','qualification','quartile','quandary','i','re'])

@@ -25,9 +25,6 @@ def has_duplicates(t):
 
     return False
 
-
-# print has_duplicates(["hello","goodbye","hello"])
-
 '''
 Exercise 11.10. Two words are rotate pairs if you can rotate one of them and get the other (see
 in Exercise 8.12).
@@ -62,14 +59,10 @@ def find_all_rotated_pairs(indict, n):
             if rotated in indict:
                 print rotated, i, key
 
-my_dict = read_in_dict("words.txt")
-
-# find_all_rotated_pairs(my_dict,3)
-
 '''
 Exercise 11.11 Here’s another Puzzler from Car Talk:
 
-This was sent in by a fellow named Dan O’Leary. He came upon a common one-syllable,
+This was sent in by a fellow named Dan OLeary. He came upon a common one-syllable,
 five-letter word recently that has the following unique property. When you remove the
 first letter, the remaining letters form a homophone of the original word, that is a word
 that sounds exactly the same. Replace the first letter, that is, put it back and remove
@@ -98,3 +91,9 @@ Write a program that lists all the words that solve the Puzzler. Solution: http:
 '''
 
 ## Incomplete, this would be good to revisit
+
+if __name__ == "__main__":
+    print has_duplicates(["hello","goodbye","hello"])
+
+    my_dict = read_in_dict("words.txt")
+    find_all_rotated_pairs(my_dict,3)

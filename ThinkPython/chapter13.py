@@ -101,3 +101,49 @@ def choose_from_hist(hist):
 
 # choose_from_hist(sample_hist)
 
+'''
+Exercise 13.6. Python provides a data structure called set that provides many common set operations.
+Read the documentation at https://docs.python.org/2/library/stdtypes.html#types-set
+and write a program that uses set subtraction to find words in the book that are not in
+the word list. Solution: http://www.greenteapress.com/thinkpython/code/analyze_book2.py.
+'''
+
+def missing_from_words(d1, d2):
+    return set(d1) - set(d2)
+
+'''
+Exercise 13.7. This algorithm works, but it is not very efficient; each time you choose a random
+word, it rebuilds the list, which is as big as the original book. An obvious improvement is to build
+the list once and then make multiple selections, but the list is still big.
+
+An alternative is:
+1. Use keys to get a list of the words in the book.
+2. Build a list that contains the cumulative sum of the word frequencies (see Exercise 10.3). The
+last item in this list is the total number of words in the book, n.
+3. Choose a random number from 1 to n. Use a bisection search (See Exercise 10.11) to find the
+index where the random number would be inserted in the cumulative sum.
+4. Use the index to find the corresponding word in the word list.
+
+Write a program that uses this algorithm to choose a random word from the book.
+Solution: http://www.greenteapress.com/thinkpython/code/analyze_book3.py
+.
+'''
+
+def build_list_of_words(x):
+    '''
+    returns a list of words
+    '''
+    wordlist = x.keys()
+    return wordlist
+
+
+if __name__ == '__main__':
+    hist = process_file('emma.txt')
+    words = process_file('words.txt')
+
+    diff = missing_from_words(hist, words)
+    print "The words in the book that aren't in the word list are:"
+    # for word in diff:
+        # print word,
+
+    print build_list_of_words(book)

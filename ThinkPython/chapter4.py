@@ -3,13 +3,6 @@
 from swampy.TurtleWorld import *
 world = TurtleWorld()
 bob = Turtle()
-#print bob
-
-#for i in range(4):
-#	fd(bob, 100)
-#	lt(bob)
-
-# wait_for_user()
 
 '''
 1. Write a function called square that takes a parameter named t, which is a turtle. It
@@ -62,8 +55,17 @@ def arc(t,r,a):
 		fd(t,move)
 		lt(t,1)
 
+if __name__ == '__main__':
+    print bob
 
-# print bob
-# arc(bob,r=25,a=180)
+    for i in range(4):
+    	fd(bob, 100)
+    	lt(bob)
 
-# wait_for_user()
+    # wait_for_user()
+
+    print bob
+
+    arc(bob,r=25,a=180)
+
+    wait_for_user()

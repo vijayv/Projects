@@ -18,10 +18,6 @@ def make_dict(infile):
 
     return out_dict
 
-my_file = open('words.txt')
-my_dict = make_dict(my_file)
-
-# print dict_search('overgrown', my_dict)
 
 '''
 Exercise 11.2. Dictionaries have a method called get that takes a key and a default value.
@@ -35,8 +31,6 @@ def histogram(s):
 
     return d
 
-# print histogram('callous')
-
 '''
 Exercise 11.3. Dictionaries have a method called keys that returns the keys of the dictionary, in no particular order, as a list.
 Modify print_hist to print the keys and their values in alphabetical order.
@@ -49,8 +43,6 @@ def sorted_dict(l):
     for entry in list:
         print entry, l.get(entry)
 
-# sorted_dict(my_dict)
-
 '''
 Exercise 11.4. Modify reverse_search so that it builds and returns a list of all keys that map to v or an empty list if there are none.
 '''
@@ -62,9 +54,7 @@ def reverse_lookup(d,v):
             lkup.append(k)
     return lkup
 
-h = histogram("parrot")
-k = reverse_lookup(h,2)
-# print k
+
 
 '''
 Exercise 11.5. Read the documentation of the dictionary method setdefault and use it to write a
@@ -73,14 +63,14 @@ more concise version of invert_dict.
 see solution here: http://www.greenteapress.com/thinkpython/code/invert_dict.py
 '''
 # INCOMPLETE
-def invert_dict(d):
-    inverse = dict()
-    for key in d:
-        val = d[key]
-        dict.setdefault(val, [key])
-        else:
-            inverse[val].append(key)
-    return inverse
+# def invert_dict(d):
+#     inverse = dict()
+#     for key in d:
+#         val = d[key]
+#         dict.setdefault(val, [key])
+#         else:
+#             inverse[val].append(key)
+#     return inverse
 
 '''
 Exercise 11.6. Run this version of and the original with a range of parameters and compare their run times.
@@ -105,3 +95,16 @@ Read the Wikipedia page on the RSA algorithm (http://en.wikipedia.org/wiki/RSA_(
 def decode_my_algo(n,e):
     pass
     # work in progress
+
+if __name__ == '__main__':
+    my_file = open('words.txt')
+    my_dict = make_dict(my_file)
+
+    print dict_search('overgrown', my_dict)
+
+    print histogram('callous')
+    sorted_dict(my_dict)
+
+    h = histogram("parrot")
+    k = reverse_lookup(h,2)
+    print k

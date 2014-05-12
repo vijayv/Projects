@@ -12,9 +12,6 @@ def nested_sum(x):
 
     return total
 
-y = [[12,40],[12,42]]
-# print nested_sum(y)
-
 '''
 Exercise 10.2. Use capitalize_all to write a function named capitalize_nested that takes a nested list of strings and returns a new nested list with all strings capitalized.
 '''
@@ -32,10 +29,6 @@ def capitalize_nested(l):
 
     return nex
 
-words = [['trada', 'matt'], ['berkeley', 'unknown']]
-
-# print capitalize_nested(words)
-
 '''
 Exercise 10.3. Write a function that takes a list of numbers and returns the cumulative sum; that is, a new list where the ith element is the sum of the first i + 1 elements from the original list. For example, the cumulative sum of [1, 2, 3] is [1, 3, 6].
 '''
@@ -47,8 +40,6 @@ def cumulative_sum(list):
 
     return new_list
 
-example103 = [1, 2, 3, 4, 5]
-# print cumulative_sum(example103)
 
 '''
 Exercise 10.4. Write a function called middle that takes a list and returns a new list that contains all but the first and last elements. So middle([1,2,3,4]) should return [2,3].
@@ -56,8 +47,6 @@ Exercise 10.4. Write a function called middle that takes a list and returns a ne
 
 def middle(list):
     return list[1:len(list)-1]
-
-# print middle(example103)
 
 '''
 Exercise 10.5. Write a function called chop that takes a list, modifies it by removing the first and last elements, and returns None.
@@ -67,6 +56,16 @@ def chop(list):
     list.pop(0)
     list.pop(len(list)-1)
 
-# chop(example103)
-# print(example103)
+if __name__ == '__main__':
+    y = [[12,40],[12,42]]
+    print nested_sum(y)
 
+    words = [['trada', 'matt'], ['berkeley', 'unknown']]
+    print capitalize_nested(words)
+
+    example103 = [1, 2, 3, 4, 5]
+    print cumulative_sum(example103)
+    print middle(example103)
+
+    chop(example103)
+    print(example103)

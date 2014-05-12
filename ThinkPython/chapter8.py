@@ -6,9 +6,7 @@ one per line.
 
 def print_reverse(x):
     for each in range(0,len(x)):
-        print x[-(each+1)]
-
-# print_reverse("This is a long sentence!")
+        print x[-(each+1)],
 
 '''
 Exercise 8.2. Modify the program to fix this error.
@@ -19,8 +17,6 @@ def duck_names():
     suffix = 'ack'
     for letter in prefixes:
         print letter + suffix if letter <> 'O' and letter <> 'Q' else letter + 'uack'
-
-# duck_names()
 
 '''
 Exercise 8.3. Given that fruit is a string, what does fruit[:] mean?
@@ -41,8 +37,6 @@ def find(word, letter, start):
         index = index + 1
     return -1
 
-# print find("thiasjdfajskdfha","s",3)
-
 
 '''
 Exercise 8.5. Encapsulate this code in a function named count, and generalize it so that it accepts
@@ -55,8 +49,6 @@ def counter(word, lkup):
         if letter == lkup:
             count = count + 1
     print count
-
-# counter("ssssthis","s")
 
 '''
 Exercise 8.6. Rewrite this function so that instead of traversing the string, it uses the threeparameter
@@ -71,15 +63,13 @@ def counter2(word, lkup):
         count = count + 1
     print count
 
-# counter2("This is a super long sentence isn't it?","n")
-
 '''
 Exercise 8.7. There is a string method called count that is similar to the function in the previous
 exercise. Read the documentation of this method and write an invocation that counts the number of
 as in 'banana'.
 '''
 
-# print 'banana'.count('a')
+
 
 '''
 Exercise 8.8. Read the documentation of the string methods at http: // docs. python. org/ 2/
@@ -102,3 +92,18 @@ and j during each iteration. Find and fix the second error in this function.
 
 Answer: The reason that it only runs 3 times is because of the "> 0", it should be changed to ">= 0"
 '''
+
+
+if __name__ == '__main__':
+
+    print_reverse("This is a long sentence!")
+
+    duck_names()
+
+    print find("thiasjdfajskdfha","s",3)
+
+    counter("ssssthis","s")
+
+    counter2("This is a super long sentence isn't it?","n")
+
+    print 'banana'.count('a')

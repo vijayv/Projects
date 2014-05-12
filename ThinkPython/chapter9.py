@@ -30,10 +30,6 @@ def percent_of_e(list):
 
     return (count / len(list)) * 100
 
-# print has_no_e("som")
-word_list = ["asd", "erewe", "asdfas", "asdfk"]
-
-# print percent_of_e(word_list), "% have no e..."
 
 '''
 Exercise 9.3. Write a function named avoids that takes a word and a string of forbidden letters, and that returns True if the word doesnt use any of the forbidden letters.
@@ -64,5 +60,10 @@ def has_forbidden_letters(word_list):
 
 # def count_of_acceptable_words(word_list):
 
+if __name__ == '__main__':
+    print has_no_e("som")
+    word_list = ["asd", "erewe", "asdfas", "asdfk"]
 
-has_forbidden_letters(word_list)
+    print percent_of_e(word_list), "% have no e..."
+
+    has_forbidden_letters(word_list)

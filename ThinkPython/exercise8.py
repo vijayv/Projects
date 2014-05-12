@@ -84,4 +84,5 @@ def rot(word, n):
         rot_word = rot_word + rotate_letter(letter,n)
     print rot_word
 
-# rot('melon',-10)
+if __name__ == '__main__':
+    rot('melon',-10)

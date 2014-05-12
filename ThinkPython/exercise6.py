@@ -14,8 +14,6 @@ def ack(m,n):
         return ack(m-1, 1)
     if m > 0 and n > 0:
         return ack(m-1, ack(m, n-1))
-
-# print ack(3,4)
 # for higher values, max recursion depth is reached
 
 '''
@@ -48,8 +46,6 @@ def is_palindrome(word):
     else:
         return False
 
-# print is_palindrome('acaramanamaraca')
-
 '''
 Exercise 6.7. A number, a, is a power of b if it is divisible by b and a/b is a power of b. Write a
 function called is_power that takes parameters a and b and returns True if a is a power of b. Note:
@@ -70,8 +66,6 @@ def awe_number(a,b):
 a = 10
 b = 3
 
-# print awe_number(a,b)
-
 
 '''
 Exercise 6.8. The greatest common divisor (GCD) of a and b is the largest number that divides
@@ -86,5 +80,8 @@ def gcd(x,y):
     r = x % y
     return gcd(y,r) if r > 0 else y
 
-print gcd(100,40)
-
+if __name__ == '__main__':
+    print ack(3,4)
+    print is_palindrome('acaramanamaraca')
+    print awe_number(a,b)
+    print gcd(100,40)

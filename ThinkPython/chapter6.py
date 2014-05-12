@@ -21,7 +21,6 @@ def hypotenuse(x,y):
     square = x**2 + y**2
     print sqrt(square)
 
-# hypotenuse(3,4)
 
 '''
 Exercise 6.3. Write a function is_between(x, y, z) that returns True if x <= y <= z or False
@@ -31,7 +30,6 @@ otherwise.
 def is_between(x,y,z):
     return x <= y <= z
 
-# print is_between(1,2,3)
 
 '''
 Recursion Stuff
@@ -51,8 +49,6 @@ def factorial(n):
         result = n * recurse
         return result
 
-# print factorial(3)
-
 # Fibonacci
 
 def fibonacci (n):
@@ -63,5 +59,8 @@ def fibonacci (n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
 
-# print fibonacci(8)
-
+if __name__ == '__main__':
+    hypotenuse(3,4)
+    print "is_between is", is_between(1,2,3)
+    print "factorial is", factorial(3)
+    print "fibonacci is", fibonacci(8)

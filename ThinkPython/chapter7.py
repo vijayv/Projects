@@ -9,8 +9,6 @@ def print_n(x,y):
         y = y-1
     return
 
-# print_n("hello",15)
-
 '''
 Exercise 7.2. Encapsulate this loop in a function called square_root that takes a as a parameter,
 chooses a reasonable value of x, and returns an estimate of the square root of a.
@@ -27,4 +25,8 @@ def square_root(a):
 
     return y
 
-print square_root(16)
+if __name__ == "__main__":
+    print_n("hello",15)
+
+    num = 16
+    print "square root of", num, "is", square_root(num)

@@ -14,8 +14,6 @@ def right_justify(s):
 	offset = 70 - len(s)
 	print " " * offset, s
 
-# right_justify('my_text')
-
 '''
 Exercise 3.4. A function object is a value you can assign to a variable or pass as an argument. For
 example, do_twice is a function that takes a function object as an argument and calls it twice:
@@ -50,8 +48,6 @@ def do_four(f,v):
 
 def print_spam(intext):
 	print intext
-
-# do_four(print_spam,'spam')
 
 '''
 1. Write a function that draws a grid like the following:
@@ -95,12 +91,16 @@ def print_rows(a,b,c):
 	print_header(a,b,c)
 	print_header(a,b,c)
 
-print_header("+","-",4)
-print_rows("|"," ",4)
-print_header("+","-",4)
-print_rows("|"," ",4)
-print_header("+","-",4)
-print_rows("|"," ",4)
-print_header("+","-",4)
-print_rows("|"," ",4)
-print_header("+","-",4)
+if __name__ == '__main__':
+    do_four(print_spam,'spam')
+    right_justify('my_text')
+
+    print_header("+","-",4)
+    print_rows("|"," ",4)
+    print_header("+","-",4)
+    print_rows("|"," ",4)
+    print_header("+","-",4)
+    print_rows("|"," ",4)
+    print_header("+","-",4)
+    print_rows("|"," ",4)
+    print_header("+","-",4)

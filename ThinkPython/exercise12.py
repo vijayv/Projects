@@ -24,8 +24,6 @@ def most_frequent(word):
     for num, let in sort_freq:
         print let, "-", num
 
-# most_frequent('qualifications')
-
 '''
 12.4 More Anagrams!
 
@@ -108,3 +106,5 @@ for each in only_anagrams:
                     repeats += 1
             print each[idx], each[idx-1]
 
+if __name__ == "__main__":
+    most_frequent('qualifications')

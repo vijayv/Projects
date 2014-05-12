@@ -79,5 +79,8 @@ def test_is_triangle():
 
     is_triangle(x,y,z)
 
-# test_is_triangle()
 
+
+if __name__ == "__main__":
+
+    test_is_triangle()

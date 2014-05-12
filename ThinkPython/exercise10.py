@@ -10,8 +10,6 @@ def is_sorted(t):
 example = [1,2,4,5,12,6,3]
 sorted_example = sorted(example)
 
-# print is_sorted(sorted_example)
-
 '''
 Exercise 10.7. Two words are anagrams if you can rearrange the letters from one to spell the other.
 Write a function called is_anagram that takes two strings and returns True if they are anagrams.
@@ -24,8 +22,6 @@ def is_anagram(word_one, word_two):
 
     return True
 
-# print is_anagram('trada', 'artad')
-# print is_anagram('trada', 'harada')
 
 '''
 Exercise 10.8. The (so-called) Birthday Paradox:
@@ -60,8 +56,6 @@ def percent_of_dupes(t):
             dupes += 1
     return dupes / len(t)
 
-example_bdays = gen_n_birthdays(23)
-# print percent_of_dupes(example_bdays)
 
 '''
 Exercise 10.9. Write a function called remove_duplicates that takes a list and returns a new
@@ -77,9 +71,7 @@ def remove_duplicates(t):
             del t[t.index(entry)]
     return t
 
-cities = ['Denver', 'San Francisco', 'Los Angeles', 'Boston', 'Denver', 'San Francisco']
-# print remove_duplicates(cities)
-# print cities
+
 
 '''
 Exercise 10.10. Write a function that reads the file words.txt and builds a list with one element per word.
@@ -102,8 +94,6 @@ def make_list2(infile):
             mylist = mylist + [word]
 
     return mylist
-
-# print make_list2('words.txt')
 
 # Method 1 takes much less time to run
 
@@ -131,8 +121,7 @@ def bisect_find(s_word, inlist):
     else:
         return None
 
-inlist = make_list('words.txt')
-# print bisect_find('overbore', inlist)
+
 
 def bisect(s_word, inlist):
     '''
@@ -156,8 +145,6 @@ def bisect(s_word, inlist):
     else:
         return None
 
-# This is not working for some reason?
-# print bisect('aah', inlist)
 
 '''
 Exercise 10.12. Two words are a reverse pair if each is the reverse of the other.
@@ -176,8 +163,6 @@ def all_reverse(inlist):
             reverse_list.append(each)
 
     return reverse_list
-
-# print all_reverse(inlist)
 
 '''
 Exercise 10.13. Two words interlock if taking alternating letters from each forms a new word.
@@ -200,5 +185,29 @@ def find_all_interlocked_pairs(x, y, inlist):
 
     return interlocked_pairs
 
-print is_interlocked('aa', 'b', inlist)
-print find_all_interlocked_pairs('ab', 'a', inlist)
+
+if __name__ == '__main__':
+    print is_sorted(sorted_example)
+
+    print is_anagram('trada', 'artad')
+    print is_anagram('trada', 'harada')
+
+    print make_list2('words.txt')
+
+    print all_reverse(inlist)
+
+    inlist = make_list('words.txt')
+    print bisect_find('overbore', inlist)
+
+    example_bdays = gen_n_birthdays(23)
+    print percent_of_dupes(example_bdays)
+
+    # This is not working for some reason?
+    print bisect('aah', inlist)
+
+    cities = ['Denver', 'San Francisco', 'Los Angeles', 'Boston', 'Denver', 'San Francisco']
+    print remove_duplicates(cities)
+    print cities
+
+    print is_interlocked('aa', 'b', inlist)
+    print find_all_interlocked_pairs('ab', 'a', inlist)

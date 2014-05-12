@@ -25,8 +25,6 @@ def test_square_root(x):
     string =  x, my_value, act_value, abs(my_value - act_value)
     return string
 
-# print test_square_root(18)
-
 '''
 Exercise 7.4. The built-in function eval takes a string and evaluates it using the Python interpreter.
 For example:
@@ -43,8 +41,6 @@ def eval_loop():
         inval = raw_input("What would you like to evaluate? \n")
         print eval(inval)
 
-# eval_loop()
-
 '''
 Exercise 7.5. The mathematician Srinivasa Ramanujan found an infinite series that can be used to
 generate a numerical approximation of pi:
@@ -56,3 +52,8 @@ pi. It should use a while loop to compute terms of the summation until the last 
 '''
 
 # This looks overly complicated and I don't feel like doing it!
+
+if __name__ == '__main__':
+    print test_square_root(18)
+
+    eval_loop()
