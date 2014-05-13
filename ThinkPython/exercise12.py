@@ -40,8 +40,6 @@ in a way that can be used as a key? -- Use a tuple!
 
 '''
 
-anagram_dict = {}
-
 def make_into_key(word):
     lst = list(word)
     lst.sort()
@@ -49,20 +47,20 @@ def make_into_key(word):
     tpl = tuple(lst)
     return tpl
 
-def add_to_dict(anag, word):
-    global anagram_dict
+def add_to_dict(anag, word, indict):
     try:
-        anagram_dict[anag].append(word)
+        indict[anag].append(word)
     except KeyError:
-        anagram_dict[anag] = [word]
+        indict[anag] = [word]
 
 def make_list_of_anagrams(infile):
+    anagram_dict = {}
     with open(infile) as wordlist:
         for word in wordlist:
             mykey = make_into_key(word.strip())
-            add_to_dict(mykey,word.strip())
+            add_to_dict(mykey,word.strip(), anagram_dict)
+    return anagram_dict
 
-make_list_of_anagrams("words.txt")
 # for k in anagram_dict:
 #     if len(anagram_dict[k]) > 1:
 #         print k, anagram_dict[k]
@@ -88,23 +86,28 @@ the metathesis pairs in the dictionary. Hint: dont test all pairs of words, and 
 swaps. Solution: http://www.greenteapress.com/thinkpython/code/metathesis.py.
 '''
 
-only_anagrams = []
-for k in anagram_dict:
-    if len(anagram_dict[k]) > 1:
-        only_anagrams.append(anagram_dict[k])
-
-for each in only_anagrams:
-    for idx in range(0,len(each)):
-        if len(each[idx]) == len(each[idx-1]):
-            for idxl in range(0,len(each[idx])):
-                repeats = 0
-                if repeats > 1:
-                    break
-                elif letter == element:
-                    pass
-                else:
-                    repeats += 1
-            print each[idx], each[idx-1]
 
 if __name__ == "__main__":
+    print "\n\nmost frequent: "
     most_frequent('qualifications')
+
+    # exercise 12.5
+    all_anagrams = make_list_of_anagrams("words.txt")
+    only_anagrams = []
+
+    for k in all_anagrams:
+        if len(all_anagrams[k]) > 1:
+            only_anagrams.append(all_anagrams[k])
+
+    for each in only_anagrams:
+        for idx in range(0,len(each)):
+            if len(each[idx]) == len(each[idx-1]):
+                for idxl in range(0,len(each[idx])):
+                    repeats = 0
+                    if repeats > 1:
+                        break
+                    elif idxl == idx:
+                        pass
+                    else:
+                        repeats += 1
+                print each[idx], each[idx-1]
