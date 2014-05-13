@@ -41,3 +41,7 @@ nosetests.xml
 
 # Pycharm
 .idea/
+
+# System Created Files
+ThinkPython/sentence2.txt
+ThinkPython/*.db
