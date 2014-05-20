@@ -70,8 +70,8 @@ def read_anagrams():
     import anydbm, pickle
     db = anydbm.open('anagrams.db')
 
-    for line in db:
-        print line
+    for key in db.keys():
+        print key, pickle.load(db[key])
 
 if __name__ == '__main__':
 
