@@ -71,18 +71,18 @@ def read_anagrams():
     db = anydbm.open('anagrams.db')
 
     for key in db.keys():
-        print key, pickle.load(db[key])
+        print key, pickle.loads(db[key])
 
 if __name__ == '__main__':
 
     # exercise 14.1
-    # print_dir_contents('C:\\Users\\vvelagapudi\\Documents\\GitHub\\Projects\\ThinkPython')
+    print_dir_contents('C:\\Users\\vvelagapudi\\Documents\\GitHub\\Projects\\ThinkPython')
 
     # exercise 14.2
-    # sed('this','that','sentence.txt','sentence2.txt')
+    sed('this','that','sentence.txt','sentence2.txt')
 
-    # for line in open('sentence2.txt'):
-    #     print line
+    for line in open('sentence2.txt'):
+        print line
 
     # exercise 14.3W
     splam = dict_of_anagrams('words.txt')
